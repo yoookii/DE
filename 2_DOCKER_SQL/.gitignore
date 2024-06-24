@@ -1,0 +1,5 @@
+# Ignore PostgreSQL data directory
+ny_taxi_postgres_data/
+
+# Ignore all .parquet files
+*.parquet
