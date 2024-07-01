@@ -1,0 +1,46 @@
+[0m16:15:32.278177 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x142cf7d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x142d05410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x142d07fd0>]}
+
+
+============================== 16:15:32.280704 | 416b04f3-465c-4595-a729-10dda08167c4 ==============================
+[0m16:15:32.280704 [info ] [MainThread]: Running with dbt=1.8.3
+[0m16:15:32.281098 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'log_cache_events': 'False', 'empty': 'None', 'indirect_selection': 'eager', 'profiles_dir': '/Users/yoki/.dbt', 'use_colors': 'True', 'log_format': 'default', 'no_print': 'None', 'static_parser': 'True', 'introspect': 'True', 'partial_parse': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'target_path': 'None', 'cache_selected_only': 'False', 'log_path': 'logs', 'invocation_command': 'dbt init', 'debug': 'False', 'printer_width': '80', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'quiet': 'False'}
+[0m16:15:32.288145 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/Users/yoki/.dbt')}
+[0m16:15:32.288423 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m16:15:54.064489 [debug] [MainThread]: Starter project path: /Users/yoki/anaconda3/lib/python3.11/site-packages/dbt/include/starter_project
+[0m16:15:54.074510 [info ] [MainThread]: 
+Your new dbt project "dbt_demo" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:15:54.075341 [info ] [MainThread]: Setting up your profile.
+[0m16:17:21.185110 [info ] [MainThread]: Profile dbt_demo written to /Users/yoki/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m16:17:21.186784 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 108.9367, "process_user_time": 3.646161, "process_kernel_time": 0.288618, "process_mem_max_rss": "221478912", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m16:17:21.187735 [debug] [MainThread]: Command `dbt init` succeeded at 16:17:21.187601 after 108.94 seconds
+[0m16:17:21.188337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x142d1bf50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100a2f6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100b1cd90>]}
+[0m16:17:21.188802 [debug] [MainThread]: Flushing usage events
+[0m16:18:12.056474 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12fc0f250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f986510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12fc53f90>]}
+
+
+============================== 16:18:12.057980 | fcca7ead-d10c-4901-9714-55fed92dadb3 ==============================
+[0m16:18:12.057980 [info ] [MainThread]: Running with dbt=1.8.3
+[0m16:18:12.058267 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'log_path': 'logs', 'introspect': 'True', 'no_print': 'None', 'write_json': 'True', 'empty': 'False', 'fail_fast': 'False', 'quiet': 'False', 'cache_selected_only': 'False', 'version_check': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'warn_error': 'None', 'use_colors': 'True', 'log_format': 'default', 'static_parser': 'True', 'printer_width': '80', 'target_path': 'None', 'log_cache_events': 'False', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/yoki/.dbt', 'debug': 'False', 'indirect_selection': 'eager'}
+[0m16:18:12.058532 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/yoki/Desktop/DE/4_dbt/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m16:18:12.059792 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.028279042, "process_user_time": 3.178356, "process_kernel_time": 0.193479, "process_mem_max_rss": "115556352", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m16:18:12.060113 [debug] [MainThread]: Command `dbt run` failed at 16:18:12.060063 after 0.03 seconds
+[0m16:18:12.060312 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1008236d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10087e8d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12fbe7e10>]}
+[0m16:18:12.060469 [debug] [MainThread]: Flushing usage events

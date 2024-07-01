@@ -1,0 +1,11 @@
+terra_demo:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: inlaid-reactor-427616-m8
+      dataset: mage-de-demo
+      threads: 4
+      timeout_seconds: 300
+      location: US
