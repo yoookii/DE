@@ -1,0 +1,30 @@
+python 06_spark_sql.py \
+    --input_green="data/pq/green/2020/*/" \
+    --input_yellow="data/pq/yellow/2020/*/" \
+    --output="data/report-2020"
+
+
+
+
+
+URL="spark://Yokis-MacBook-Pro.local:7077"
+
+spark-submit \
+    --master="${URL}" \
+    06_spark_sql.py \
+    --input_green="data/pq/green/2021/*/" \
+    --input_yellow="data/pq/yellow/2021/*/" \
+    --output="data/report-2021"
+
+--input_green=gs://mage-de-demo/pq/green/2021/*/ \
+--input_yellow=gs://mage-de-demo/pq/yellow/2021/*/ \
+--output=gs://mage-de-demo/data/report-2021/
+
+gcloud dataproc jobs submit pyspark \
+    --cluster=de-cluster \
+    --region=us-central1 \
+    gs://mage-de-demo/code/06_spark_sql.py \
+    -- \
+        --input_green="gs://mage-de-demo/pq/green/2021/*/" \
+        --input_yellow="gs://mage-de-demo/pq/yellow/2021/*/" \
+        --output="gs://mage-de-demo/report-2021/"
