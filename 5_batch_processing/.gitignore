@@ -2,6 +2,7 @@
 *.parquet
 *.crc
 *.json
+*.jar
 
 data
 fhvhv

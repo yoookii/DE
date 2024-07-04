@@ -20,13 +20,18 @@ input_green = args.input_green
 input_yellow = args.input_yellow
 output = args.output
 
+gcs_connector_path = 'gs://hadoop-lib/gcs/gcs-connector-hadoop3-latest.jar'
+# bigquery_connector_path = 'gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.39.1.jar'
+bigquery_connector_path = 'gs://spark-lib/bigquery/spark-3.4-bigquery-0.37.0.jar'
+
 spark = SparkSession.builder \
     .appName('test') \
-    .config("spark.jars.packages", "com.google.cloud.spark:spark-bigquery-with-dependencies_2.13:0.39.1") \
-    .config('spark.sql.extensions', 'com.google.cloud.spark.bigquery.SparkBigQueryExtension') \
-    .config('spark.sql.catalog.spark_bigquery', 'com.google.cloud.spark.bigquery.v2.Spark35BigQueryTableProvider') \
+    .config('spark.jars', f'{bigquery_connector_path},{gcs_connector_path}') \
+    .config('temporaryGcsBucket', 'dataproc-temp-us-central1-857637254994-gjiaryos') \
+    .config('spark.hadoop.google.cloud.auth.service.account.enable', 'true') \
+    .config('spark.hadoop.fs.gs.impl', 'com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem') \
+    .config('spark.hadoop.fs.AbstractFileSystem.gs.impl', 'com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS') \
     .getOrCreate()
-
 
 # spark = SparkSession.builder \
 #     .master("spark://Yokis-MacBook-Pro.local:7077") \

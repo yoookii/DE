@@ -7,4 +7,4 @@ gcloud dataproc jobs submit pyspark \
   -- \
     --input_green="gs://mage-de-demo/pq/green/2020/*/" \
     --input_yellow="gs://mage-de-demo/pq/yellow/2020/*/" \
-    --output="trips_data_all.report-2020"
+    --output="inlaid-reactor-427616-m8.trips_data_all.report-2020"
